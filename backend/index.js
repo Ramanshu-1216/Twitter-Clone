@@ -10,6 +10,8 @@ app.use('/auth', require('./routes/protecterRoute.js'));
 app.get("/", (req, res) => {
     res.send("app is running");
 });
-app.listen(8000, (req) => {
+const port = process.env.PORT || 8000;
+app.listen(port, '0.0.0.0', (req) => {
     console.log("Server is running on port 8000");
 });
+
